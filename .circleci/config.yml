@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  deploy_dev:
+    docker:
+      - image: circleci/node:15.9
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          command: npm i
+      - run:
+          name: build
+          command: npm run build
+      - run:
+          name: deploy to Firebase Hosting
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_DEV
+
+  deploy_prod:
+    docker:
+      - image: circleci/node:15.9
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          command: npm i
+      - run:
+          name: build
+          command: npm run build
+      - run:
+          name: deploy to Firebase Hosting
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_PROD
+
+workflows:
+  version: 2
+  deploy_dev:
+    jobs:
+      - deploy_dev:
+          filters:
+            branches:
+              only: develop
+      - deploy_prod:
+          filters:
+            branches:
+              only: master
