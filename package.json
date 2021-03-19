@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy:dev": "firebase deploy --only hosting --project=dev",
-    "deploy:prod": "firebase deploy --only hosting --project=prod"
+    "deploy:prod": "firebase deploy --only hosting --project=prod",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,11 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
     "firebase-tools": "^9.6.1"
   }
 }
