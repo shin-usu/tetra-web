@@ -12,6 +12,9 @@ jobs:
           name: build
           command: npm run build
       - run:
+          name: select dev project
+          command: ./node_modules/.bin/firebase use dev
+      - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_DEV
 
@@ -26,6 +29,9 @@ jobs:
       - run:
           name: build
           command: npm run build
+      - run:
+          name: select prod project
+          command: ./node_modules/.bin/firebase use prod
       - run:
           name: deploy to Firebase Hosting
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_PROD
