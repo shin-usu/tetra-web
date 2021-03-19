@@ -16,7 +16,7 @@ jobs:
           command: ./node_modules/.bin/firebase use dev
       - run:
           name: deploy to Firebase Hosting
-          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_DEV
+          command: ./node_modules/.bin/firebase deploy --only hosting --token $FIREBASE_CI_TOKEN_DEV
 
   deploy_prod:
     docker:
@@ -34,7 +34,7 @@ jobs:
           command: ./node_modules/.bin/firebase use prod
       - run:
           name: deploy to Firebase Hosting
-          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_CI_TOKEN_PROD
+          command: ./node_modules/.bin/firebase deploy --only hosting --token $FIREBASE_CI_TOKEN_PROD
 
 workflows:
   version: 2
