@@ -43,11 +43,7 @@ workflows:
       - deploy_dev:
           filters:
             branches:
-              only: test-ci
-      - deploy_dev:
-          filters:
-            branches:
-              only: develop
+              only: develop, test-ci
       - deploy_prod:
           filters:
             branches:
