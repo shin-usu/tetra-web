@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          tetra-web deploy test
+          tetra-web deploy test dev and master
         </p>
         <a
           className="App-link"
