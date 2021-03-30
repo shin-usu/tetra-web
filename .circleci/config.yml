@@ -9,6 +9,9 @@ jobs:
           name: npm install
           command: npm i
       - run:
+          name: decode dotenv file
+          command: echo $ENV_FILE_DEV | base64 --decode > .env
+      - run:
           name: build
           command: npm run build
       - run:
@@ -26,6 +29,9 @@ jobs:
       - run:
           name: npm install
           command: npm i
+      - run:
+          name: decode dotenv file
+          command: echo $ENV_FILE_PROD | base64 --decode > .env
       - run:
           name: build
           command: npm run build
