@@ -19,11 +19,11 @@ module.exports = {
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/ban-ts-ignore': 'off',
-        '@typescript-eslint/no-unused-vars': 'error',
+        '@typescript-eslint/no-unused-vars': 'warn',
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'no-extra-semi': 'error',
         'quotes': ['error', 'single'],
         'semi': ['error', 'always'],
-},
+    },
 };
